@@ -1,6 +1,5 @@
 # The Biz Info
-Contributors: retrofitter
-Tags: Customizer,Business
+Contributors: retrofitterTags: Customizer,Business
 Requires at least: 5.2
 Tested up to: 5.2
 Requires PHP: 5.6
