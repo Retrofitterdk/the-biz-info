@@ -170,7 +170,7 @@ function biz_info_register_settings( $wp_customize ) {
 						
 	// Store VAT-number
 	$wp_customize->add_setting(
-		'woocommerce_store_vat',
+		'biz_vat',
 		array(
 			'default'     => '',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -181,11 +181,11 @@ function biz_info_register_settings( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'woocommerce_store_vat',
+			'biz_vat',
 			array(
 				'label'          => __( 'VAT-number', 'the-biz-info' ),
 				'section'        => 'title_tagline',
-				'settings'       => 'woocommerce_store_vat',
+				'settings'       => 'biz_vat',
 				'priority'       => 78
 			)
 		)
@@ -193,7 +193,7 @@ function biz_info_register_settings( $wp_customize ) {
 						
 	// Store EAN-number
 	$wp_customize->add_setting(
-		'woocommerce_store_ean',
+		'biz_ean',
 		array(
 			'default'     => '',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -204,11 +204,11 @@ function biz_info_register_settings( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'woocommerce_store_ean',
+			'biz_ean',
 			array(
 				'label'          => __( 'EAN-number', 'the-biz-info' ),
 				'section'        => 'title_tagline',
-				'settings'       => 'woocommerce_store_ean',
+				'settings'       => 'biz_ean',
 				'priority'       => 78
 			)
 		)
