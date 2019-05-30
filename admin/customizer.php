@@ -173,7 +173,7 @@ function biz_info_register_settings( $wp_customize ) {
 		'woocommerce_store_vat',
 		array(
 			'default'     => '',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'              => 'option'
 		)
 	);
@@ -196,7 +196,7 @@ function biz_info_register_settings( $wp_customize ) {
 		'woocommerce_store_ean',
 		array(
 			'default'     => '',
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'              => 'option'
 		)
 	);
