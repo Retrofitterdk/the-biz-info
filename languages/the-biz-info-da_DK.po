@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Biz Info\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-07 14:13+0000\n"
+"PO-Revision-Date: 2019-06-07 14:17+0000\n"
+"Last-Translator: sbn <dev-email@flywheel.local>\n"
+"Language-Team: Dansk\n"
+"Language: da_DK\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.1"
+
+#. Description of the plugin
+msgid "Add fields for adding business information in the customizer"
+msgstr "Skaber felter for at tilføje forretningsinformation i tilpasseren"
+
+#: admin/customizer.php:26
+msgid "Address"
+msgstr "Adresse"
+
+#: admin/customizer.php:48
+msgid "Address2"
+msgstr "Adresse 2"
+
+#: admin/customizer.php:94
+msgid "City"
+msgstr "By"
+
+#: admin/customizer.php:117
+msgid "Country"
+msgstr "Land"
+
+#: admin/customizer.php:163
+msgid "E-mail"
+msgstr "E-mail"
+
+#: admin/customizer.php:209
+msgid "EAN-number"
+msgstr "EAN-nummer"
+
+#: inc/display_biz_info.php:78
+msgid "EAN-number: "
+msgstr "EAN-nummer:"
+
+#. Author URI of the plugin
+msgid "http://retrofitter.dk"
+msgstr "http://retrofitter.dk"
+
+#: admin/customizer.php:140
+msgid "Phone"
+msgstr "Tlf."
+
+#: inc/display_biz_info.php:69
+msgid "Phone: "
+msgstr "Tlf:"
+
+#. Author of the plugin
+msgid "Steffen Bang Nielsen"
+msgstr "Steffen Bang Nielsen"
+
+#. Name of the plugin
+msgid "The Biz Info"
+msgstr ""
+"The Biz Info\n"
+
+#: admin/customizer.php:186
+msgid "VAT-number"
+msgstr "CVR-nummer"
+
+#: inc/display_biz_info.php:75
+msgid "VAT-number: "
+msgstr "Cvr-nummer:"
+
+#: admin/customizer.php:71
+msgid "Zip"
+msgstr "Postnr."

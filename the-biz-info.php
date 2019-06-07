@@ -5,7 +5,7 @@
 * Author: Steffen Bang Nielsen
 * Author URI: http://retrofitter.dk
 * Text Domain: the-biz-info
-* Version: 0.1
+* Version: 0.2
 
 */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
