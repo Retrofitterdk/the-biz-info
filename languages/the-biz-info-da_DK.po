@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: The Biz Info\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-07 14:13+0000\n"
-"PO-Revision-Date: 2019-06-07 14:17+0000\n"
+"PO-Revision-Date: 2019-06-07 14:32+0000\n"
 "Last-Translator: sbn <dev-email@flywheel.local>\n"
 "Language-Team: Dansk\n"
 "Language: da_DK\n"
@@ -73,7 +73,7 @@ msgstr "CVR-nummer"
 
 #: inc/display_biz_info.php:75
 msgid "VAT-number: "
-msgstr "Cvr-nummer:"
+msgstr "CVR-nummer:"
 
 #: admin/customizer.php:71
 msgid "Zip"
