@@ -19,7 +19,8 @@ function get_the_biz_info ( $attr ) {
 
 $content = '';                                       
 $site_home = home_url( '/' );
-$site_title = get_bloginfo( 'name' );
+$site_logo = get_custom_logo();
+$site_title = get_bloginfo( 'name', 'display' );
 $site_description = get_bloginfo( 'description', 'display' );
 $site_adress = get_option( 'woocommerce_store_address' );
 $site_adress2 = get_option( 'woocommerce_store_address_2' );
@@ -35,47 +36,49 @@ $site_ean = get_option( 'biz_ean' );
 $content .= $attr['before'] . "\n";
 $content .= '<!-- the name of the organization -->';
 $content .= '<div id="organization_info" class="site-info' . $layout . ' columns-' . $col . '" itemscope itemtype="http://schema.org/Organization">';
-$content .= '<p class="site-title"><a href="' . esc_url($site_home) . '" rel="home"><span itemprop="legalName">' . esc_html($site_title) . '</span></a></p>';
+$content .= '<div class="site-info__branding">' .  $site_logo;
+$content .= '<p class="site-info__title"><a href="' . esc_url($site_home) . '" rel="home"><span itemprop="legalName">' . esc_html($site_title) . '</span></a></p>';
 if ( $site_description || is_customize_preview() ) :
-$content .= '<p class="site-description" itemprop="description">' . esc_html($site_description) . '</p>';
+$content .= '<p class="site-info__description" itemprop="description">' . esc_html($site_description) . '</p>';
 endif;
+$content .= '</div>';
 $content .= '<!-- address -->';
-$content .= '<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+$content .= '<div class="site-info__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
 if ( $site_adress || is_customize_preview() ) :
-$content .= '<p class="site-adress" id="postal_address" itemprop="streetAddress">' . esc_html($site_adress) . '</p>';
+$content .= '<p class="site-info__address--first" id="postal_address" itemprop="streetAddress">' . esc_html($site_adress) . '</p>';
 endif;
 if ( $site_adress2 || is_customize_preview() ) :
-$content .= '<p class="site-adress2" id="postal_address2" itemprop="streetAddress">' . esc_html($site_adress2) . '</p>';
+$content .= '<p class="site-info__address--second" id="postal_address2" itemprop="streetAddress">' . esc_html($site_adress2) . '</p>';
 endif;
 if ( $site_postcode || $site_city || is_customize_preview() ) :
-$content .= '<p class="zip-city">';
+$content .= '<p class="site-info__postal">';
 if ( $site_postcode || is_customize_preview() ) :
-$content .= '<span class="site-postcode" id="postal_code" itemprop="postalCode">' . esc_html($site_postcode) . '</span> ';
+$content .= '<span class="site-info__postal--code" id="postal_code" itemprop="postalCode">' . esc_html($site_postcode) . '</span> ';
 endif;
 if ( $site_city || is_customize_preview() ) :
-$content .= '<span class="site-city" id="postal_locality" itemprop="addressLocality">' . esc_html($site_city). '</span>';
+$content .= '<span class="site-info__postal--city" id="postal_locality" itemprop="addressLocality">' . esc_html($site_city). '</span>';
 endif;
 $content .= '</p>';
 endif;
 if ( $site_country || is_customize_preview() ) :
-$content .= '<p class="site-country" id="postal_country" itemprop="addressCountry">' . esc_html($site_country) . '</p>';
+$content .= '<p class="site-info__country" id="postal_country" itemprop="addressCountry">' . esc_html($site_country) . '</p>';
 endif;
 $content .= '</div><!--/itemtype=PostalAddress-->';
-$content .= '<div class="contact-info"><!-- Contact information -->';
+$content .= '<div class="site-info__contact"><!-- Contact information -->';
 if ( $site_email || is_customize_preview() ) :
-$content .= '<p class="site-email"><a href="mailto:' . esc_html($site_email) . '"><span class="email" itemprop="email">' . esc_html($site_email) . '</a></p>';
+$content .= '<p class="site-info__email"><a href="mailto:' . esc_html($site_email) . '"><span class="email" itemprop="email">' . esc_html($site_email) . '</a></p>';
 endif;
 if ( $site_phone || is_customize_preview() ) :
-$content .= '<p class="site-phone">' . __( 'Phone: ', 'the-biz-info' ) . '<a href="tel:' . esc_html($site_phone_call) . '"><span class="telephone" itemprop="telephone">' . esc_html($site_phone) . '</a></p>';
+$content .= '<p class="site-info__phone">' . __( 'Phone: ', 'the-biz-info' ) . '<a href="tel:' . esc_html($site_phone_call) . '"><span class="telephone" itemprop="telephone">' . esc_html($site_phone) . '</a></p>';
 endif;
 $content .= '</div>';
 if ( $site_vat || $site_ean || is_customize_preview() ) :
-$content .= '<div class="billing-info"><!-- Billing information -->';
+$content .= '<div class="site-info__billing"><!-- Billing information -->';
 if ( $site_vat || is_customize_preview() ) :
-$content .= '<p class="site-vat" id="billing_vatid">' . __( 'VAT-number: ', 'the-biz-info' ) . '<span class="vatID" itemprop="vatID">' . esc_html($site_vat) . '</span></p>';
+$content .= '<p class="site-info__vat" id="billing_vatid">' . __( 'VAT-number: ', 'the-biz-info' ) . '<span class="vatID" itemprop="vatID">' . esc_html($site_vat) . '</span></p>';
 endif;
 if ( $site_ean || is_customize_preview() ) :
-$content .= '<p class="site-eanid" id="billing-eanid">' . __( 'EAN-number: ', 'the-biz-info' ) . '<span class="eanID">' . esc_html($site_ean) . '</p>';
+$content .= '<p class="site-info__eanid" id="billing-eanid">' . __( 'EAN-number: ', 'the-biz-info' ) . '<span class="eanID">' . esc_html($site_ean) . '</p>';
 endif;
 $content .= '</div>';
 endif;
