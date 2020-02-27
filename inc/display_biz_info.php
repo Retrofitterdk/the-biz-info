@@ -37,7 +37,7 @@ $content .= $attr['before'] . "\n";
 $content .= '<!-- the name of the organization -->';
 $content .= '<div id="organization_info" class="site-info' . $layout . ' columns-' . $col . '" itemscope itemtype="http://schema.org/Organization">';
 $content .= '<div class="site-info__branding">' .  $site_logo;
-$content .= '<p class="site-info__title"><a href="' . esc_url($site_home) . '" rel="home"><span itemprop="legalName">' . esc_html($site_title) . '</span></a></p>';
+$content .= '<p class="site-info__title"><a href="' . esc_url($site_home) . '" class="site-info__title-link" rel="home"><span itemprop="legalName">' . esc_html($site_title) . '</span></a></p>';
 if ( $site_description || is_customize_preview() ) :
 $content .= '<p class="site-info__description" itemprop="description">' . esc_html($site_description) . '</p>';
 endif;
