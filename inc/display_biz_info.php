@@ -18,10 +18,6 @@ function get_the_biz_info ( $attr ) {
   }
 
 $content = '';                                       
-$site_home = home_url( '/' );
-$site_logo = get_custom_logo();
-$site_title = get_bloginfo( 'name', 'display' );
-$site_description = get_bloginfo( 'description', 'display' );
 $site_adress = get_option( 'woocommerce_store_address' );
 $site_adress2 = get_option( 'woocommerce_store_address_2' );
 $site_postcode = get_option( 'woocommerce_store_postcode' );
@@ -34,14 +30,6 @@ $site_vat = get_option( 'biz_vat' );
 $site_ean = get_option( 'biz_ean' );
 
 $content .= $attr['before'] . "\n";
-$content .= '<!-- the name of the organization -->';
-$content .= '<div id="organization_info" class="site-info' . $layout . ' columns-' . $col . '" itemscope itemtype="http://schema.org/Organization">';
-$content .= '<div class="site-info__branding">' .  $site_logo;
-$content .= '<p class="site-info__title"><a href="' . esc_url($site_home) . '" class="site-info__title-link" rel="home"><span itemprop="legalName">' . esc_html($site_title) . '</span></a></p>';
-if ( $site_description || is_customize_preview() ) :
-$content .= '<p class="site-info__description" itemprop="description">' . esc_html($site_description) . '</p>';
-endif;
-$content .= '</div>';
 $content .= '<!-- address -->';
 $content .= '<div class="site-info__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
 if ( $site_adress || is_customize_preview() ) :
@@ -85,7 +73,6 @@ endif;
 if ( function_exists( 'the_privacy_policy_link' ) ) :
   get_the_privacy_policy_link( '', '<p><span role="separator" aria-hidden="true"></span></p>' );
 endif;
-$content .= '</div><!--/itemtype=Organization-->';
 $content .= $attr['after'] . "\n";
 
 
@@ -107,7 +94,7 @@ add_action('init', 'biz_info_shortcode_init');
 
 function biz_info_shortcode( $attr = array() ){
 
-  // All plugin/theme devs to short-ciruit the default output and roll their own.
+  // Allow plugin/theme devs to short-ciruit the default output and roll their own.
   $out = apply_filters( 'biz_info_shortcode', '', $attr );
 
   if ( $out )
